@@ -27,41 +27,24 @@ class CheckboxGroup extends React.Component {
 
   handleCheck = (value) => {
     const { selectedValue } = this.state
-
+    const { onChange } = this.props
     if (selectedValue.indexOf(value) === -1) {
-      // this.setState({
-      //   selectedValue: selectedValue.concat(value)
-      // })
-      this.setState((prevState) => {
-        return {
-          selectedValue: prevState.selectedValue.concat(value)
-        }
+      this.setState({
+        selectedValue: selectedValue.concat(value)
+      }, () => {
+        onChange(this.state.selectedValue)
       })
     } else {
-      // this.setState({
-      //   selectedValue: selectedValue.filter((item) => {
-      //     return item !== value
-      //   })
-      // })
       this.setState((prevState) => {
         return {
           selectedValue: prevState.selectedValue.filter((item) => {
             return item !== value
           })
         }
+      }, () => {
+        onChange(this.state.selectedValue)
       })
     }
-
-    const { onChange } = this.props
-    if (onChange) {
-      onChange(this.state.selectedValue)
-    }
-  }
-
-  getSelectedValues = () => {
-    const { onChange } = this.props
-    const { selectedValue } = this.state
-    onChange(selectedValue)
   }
 }
 
