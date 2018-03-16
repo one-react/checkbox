@@ -7,13 +7,13 @@ import { Checkbox, CheckboxGroup } from '../../src'
 storiesOf('Checkbox', module)
   .add('Checkbox', () => (
     <div>
-      <Checkbox value="choose" onChange={(checked) => {console.log(checked)}}>请选择</Checkbox>
-      <Checkbox value="apple" defaultChecked>apple</Checkbox>
+      <Checkbox value='choose' onChange={(checked) => {console.log(checked)}}>请选择</Checkbox>
+      <Checkbox value='apple' defaultChecked>apple</Checkbox>
     </div>
   ))
-  // .add('CheckboxGroup', () => (
-  //   <CheckboxGroup defaultValue={['choose']}>
-  //     <Checkbox name="choose">请选择</Checkbox>
-  //     <Checkbox name="apple">apple</Checkbox>
-  //   </CheckboxGroup>
-  // ))
+  .add('CheckboxGroup', () => (
+    <CheckboxGroup defaultValue={['agree']} onChange={(checkedArr) => {console.log(checkedArr)}}>
+      <Checkbox value='agree'>我同意</Checkbox>
+      <Checkbox value='banana'>banana</Checkbox>
+    </CheckboxGroup>
+  ))

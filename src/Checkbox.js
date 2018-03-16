@@ -4,14 +4,16 @@ import clx from 'classnames'
 class Checkbox extends React.Component {
   constructor (props) {
     super(props)
+    const { checked } = props
     this.state = {
-      isChecked: props.defaultChecked || false
+      isChecked: props.defaultChecked || checked || false
     }
   }
 
   render () {
     const { children, value } = this.props
-    const active = this.state.isChecked
+    const { isChecked } = this.state
+    const active = isChecked
     const checkboxClass = clx({
       'or-checkbox': true,
       active
@@ -20,7 +22,7 @@ class Checkbox extends React.Component {
       <div className={checkboxClass} value={value} onClick={this.handleClick}>
         <div className='checkbox-icon'>
           <svg
-            fill='#ffffff'
+            fill={isChecked ? '#9E9E9E' : '#FFFFFF'}
             height='18'
             viewBox='0 0 24 24'
             width='18'
@@ -43,10 +45,10 @@ class Checkbox extends React.Component {
     if (typeof onChange === 'function') {
       onChange(ifChecked)
     }
-    // const { onClick, value } = this.props
-    // if (onClick) {
-    //   onClick(value)
-    // }
+    const { onClick, value } = this.props
+    if (onClick) {
+      onClick(value)
+    }
   }
 }
 
