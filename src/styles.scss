@@ -1,11 +1,36 @@
 @import "~or-theme";
 
-.#{$prefix}-btn {
-  display: inline-block;
-  padding: 0 40px;
-  line-height: 38px;
-  background-color: #333;
-  color: #fff;
-  font-size: 14px;
-  border-radius: 1px;
+.#{$prefix}-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    .checkbox-icon {
+      border-color: $gray4;
+    }
+  }
+
+  &.active {
+    svg {
+      fill: $gray4;
+    }
+  }
+
+  .checkbox-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    background-color: $white;
+    border-radius: 1px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: $gray3;
+  }
+
+  .checkbox-content {
+    margin-left: 5px;
+  }
 }

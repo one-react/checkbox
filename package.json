@@ -55,6 +55,7 @@
     "semantic-release": "^8.2.0"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "or-theme": "^1.1.0"
   },
   "peerDependencies": {
