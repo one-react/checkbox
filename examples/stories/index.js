@@ -1,8 +1,8 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 // import { action } from '@storybook/addon-actions'
-
 import { Checkbox, CheckboxGroup } from '../../src'
+import Test from './Test'
 
 storiesOf('Checkbox', module)
   .add('Checkbox', () => (
@@ -16,4 +16,8 @@ storiesOf('Checkbox', module)
       <Checkbox value='agree'>我同意</Checkbox>
       <Checkbox value='banana'>banana</Checkbox>
     </CheckboxGroup>
+  ))
+
+  .add('test', () => (
+    <Test />
   ))
