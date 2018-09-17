@@ -2,27 +2,17 @@ import React from 'react'
 import clx from 'classnames'
 
 class Checkbox extends React.Component {
-  constructor (props) {
-    super(props)
-    const { checked } = props
-    this.state = {
-      isChecked: props.defaultChecked || checked || false
-    }
-  }
-
   render () {
-    const { children, value } = this.props
-    const { isChecked } = this.state
-    const active = isChecked
+    const { children, value, isChecked } = this.props
     const checkboxClass = clx({
       'or-checkbox': true,
-      active
+      'or-checkbox-checked': isChecked
     })
     return (
       <div className={checkboxClass} value={value} onClick={this.handleClick}>
         <div className='checkbox-icon'>
           <svg
-            fill={isChecked ? '#9E9E9E' : '#FFFFFF'}
+            fill={isChecked ? '#eee' : '#FFFFFF'}
             height='18'
             viewBox='0 0 24 24'
             width='18'
@@ -31,23 +21,15 @@ class Checkbox extends React.Component {
             <path d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z' />
           </svg>
         </div>
-        <div className='checkbox-content'>{children}</div>
+        <div className='or-checkbox-content'>{children}</div>
       </div>
     )
   }
 
   handleClick = (e) => {
-    const ifChecked = !this.state.isChecked
-    this.setState({
-      isChecked: ifChecked
-    })
-    const { onChange } = this.props
+    const { onChange, isChecked, value } = this.props
     if (typeof onChange === 'function') {
-      onChange(ifChecked)
-    }
-    const { onClick, value } = this.props
-    if (onClick) {
-      onClick(value)
+      onChange(!isChecked, value)
     }
   }
 }
