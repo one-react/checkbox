@@ -29,8 +29,24 @@
 }
 
 .or-checkbox-button {
+  min-width: 60px;
+
+  .or-checkbox-button-content {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 30px;
+    background-color: $white;
+    color: $primary-color;
+    border-style: solid;
+    border-width: 1px;
+    border-color: $primary-color;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+
+  }
   &.or-checkbox-checked {
-    .or-btn {
+    .or-checkbox-button-content {
       background-color: $primary-color;
       color: $white;
       border-color: $primary-color;
