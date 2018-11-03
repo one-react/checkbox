@@ -2,9 +2,9 @@ import React, { PureComponent } from 'react'
 
 import Button from 'or-button'
 
-import { Checkbox } from '../../src'
+import { Checkbox } from 'or-checkbox'
 
-export class CheckboxExample extends PureComponent {
+export default class CheckboxExample extends PureComponent {
   state = {
     isChecked: false
   }
