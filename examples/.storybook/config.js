@@ -1,9 +1,9 @@
 import { configure } from '@storybook/react'
-import { setOptions } from '@storybook/addon-options'
+import { withOptions } from '@storybook/addon-options'
 
-setOptions({
+withOptions({
   name: 'One React',
-  url: '#',
+  url: 'https://github.com/one-react/checkbox',
   goFullScreen: false,
   showAddonPanel: true,
   addonPanelInRight: true,

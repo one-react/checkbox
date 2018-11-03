@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react'
 
-import { Checkbox, CheckboxGroup } from '../../src'
+import { Checkbox, CheckboxGroup } from 'or-checkbox'
 
 import Button from 'or-button'
 
-export class CheckboxButtonExample extends PureComponent {
+export default class CheckboxButtonExample extends PureComponent {
   state = {
     sports: ['baseball']
   }

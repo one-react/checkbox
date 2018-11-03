@@ -1,10 +1,10 @@
 import React from 'react'
 
-import { Checkbox, CheckboxGroup } from '../../src'
+import { Checkbox, CheckboxGroup } from 'or-checkbox'
 
 import Button from 'or-button'
 
-export class CheckboxGroupExample extends React.Component {
+export default class CheckboxGroupExample extends React.Component {
   state = {
     fruits: ['apple'],
     sports: []
