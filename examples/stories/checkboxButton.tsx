@@ -10,7 +10,7 @@ export default class CheckboxButtonExample extends PureComponent {
   }
   render() {
     return (
-      <div className="checkbox-group-example">
+      <div className="checkbox-group-button checkbox-group-example">
         <h1>checkbox-button horizontal:</h1>
         <CheckboxGroup
           type="button"

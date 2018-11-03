@@ -1,5 +1,5 @@
 import clx from 'classnames'
-import Button from 'or-button'
+import { SvgCheck } from 'or-icons'
 import React, { PureComponent } from 'react'
 
 interface Props {
@@ -50,21 +50,12 @@ export class Checkbox extends PureComponent<Props, {}> {
         {type !== 'button' ? (
           <>
             <div className="or-checkbox-icon">
-              <svg
-                fill={isChecked ? '#eee' : '#FFFFFF'}
-                height="18"
-                viewBox="0 0 24 24"
-                width="18"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M0 0h24v24H0z" fill="none" />
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-              </svg>
+              <SvgCheck size="18" fill={isChecked ? '#eee' : '#FFFFFF'} />
             </div>
             <div className="or-checkbox-label">{children}</div>
           </>
         ) : (
-          <Button size="small">{children}</Button>
+          <div className="or-checkbox-button-content">{children}</div>
         )}
       </div>
     )
