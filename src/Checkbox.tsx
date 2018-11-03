@@ -63,6 +63,7 @@ export class Checkbox extends PureComponent<Props, {}> {
 
   handleClick = () => {
     const { onChange, isChecked } = this.props
+    /* istanbul ignore next */
     if (typeof onChange === 'function') {
       onChange(!isChecked)
     }
