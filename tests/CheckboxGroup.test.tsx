@@ -56,6 +56,33 @@ describe('test for Checkbox', () => {
   })
 })
 
+describe('no default checked value', () => {
+  const wrapper = mount(renderCheckboxGroup({}))
+  it('should render properly', () => {
+    expect(
+      wrapper
+        .find('.or-checkbox')
+        .at(0)
+        .hasClass('or-checkbox-checked')
+    ).toBe(false)
+    expect(
+      wrapper
+        .find('.or-checkbox')
+        .at(1)
+        .hasClass('or-checkbox-checked')
+    ).toBe(false)
+  })
+})
+
+function renderCheckboxGroup(props) {
+  return (
+    <CheckboxGroup values={props.fruits}>
+      <Checkbox value="apple">Apple</Checkbox>
+      <Checkbox value="banana">Banana</Checkbox>
+    </CheckboxGroup>
+  )
+}
+
 class RenderCheckboxGroup extends PureComponent {
   state = {
     fruits: ['apple']
