@@ -1,8 +1,15 @@
 @import "~or-theme";
 
+$or-checkbox-primary-color: $or-primary-color !default;
+
+$or-checkbox-button-padding: $or-gap $or-gap * 3 !default;
+
+$or-checkbox-border-radius: $or-border-radius-sm !default;
+$or-checkbox-border-width: $or-border-width !default;
+
 .or-checkbox-group {
   display: flex;
-  font-family: $font-family;
+  font-family: $or-font-family;
 }
 
 .or-checkbox-group-horizontal {
@@ -24,7 +31,7 @@
 .or-checkbox {
   display: flex;
   align-items: center;
-  font-family: $font-family;
+  font-family: $or-font-family;
   cursor: pointer;
 }
 
@@ -34,12 +41,12 @@
   .or-checkbox-button-content {
     display: inline-block;
     width: 100%;
-    padding: 10px 30px;
-    background-color: $white;
-    color: $primary-color;
+    padding: $or-checkbox-button-padding;
+    background-color: white;
+    color: $or-checkbox-primary-color;
     border-style: solid;
-    border-width: 1px;
-    border-color: $primary-color;
+    border-width: $or-checkbox-border-width;
+    border-color: $or-checkbox-primary-color;
     text-align: center;
     cursor: pointer;
     box-sizing: border-box;
@@ -47,9 +54,9 @@
   }
   &.or-checkbox-checked {
     .or-checkbox-button-content {
-      background-color: $primary-color;
-      color: $white;
-      border-color: $primary-color;
+      background-color: $or-checkbox-primary-color;
+      color: white;
+      border-color: $or-checkbox-primary-color;
     }
   }
 }
@@ -57,14 +64,14 @@
 .or-checkbox-normal {
   &:hover {
     .or-checkbox-icon {
-      border-color: $primary-color;
+      border-color: $or-checkbox-primary-color;
     }
   }
 
   &.or-checkbox-checked {
     .or-checkbox-icon {
-      background-color: $primary-color;
-      border-color: $primary-color;
+      background-color: $or-checkbox-primary-color;
+      border-color: $or-checkbox-primary-color;
     }
   }
 
@@ -75,11 +82,11 @@
     width: 18px;
     height: 18px;
     margin-right: 5px;
-    background-color: $white;
-    border-radius: 1px;
+    background-color: white;
+    border-radius: $or-checkbox-border-radius;
     border-style: solid;
-    border-width: 1px;
-    border-color: $gray3;
+    border-width: $or-checkbox-border-width;
+    border-color: $or-gray3;
     transition: background .25s ease-in-out;
   }
 }
