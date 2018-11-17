@@ -6,12 +6,13 @@ import Button from 'or-button'
 
 export default class CheckboxButtonExample extends PureComponent {
   state = {
-    sports: ['baseball']
+    sports: ['baseball'],
+    isAgree: false
   }
   render() {
     return (
       <div className="checkbox-group-button checkbox-group-example">
-        <h1>checkbox-button horizontal:</h1>
+        <h1>checkbox-group-button horizontal:</h1>
         <CheckboxGroup
           type="button"
           values={this.state.sports}
@@ -23,6 +24,15 @@ export default class CheckboxButtonExample extends PureComponent {
           <Checkbox value="basketball">篮球</Checkbox>
         </CheckboxGroup>
         <Button onClick={this.handleSportsSubmit}>提交</Button>
+        <h1>checkbox button</h1>
+        <Checkbox
+          type="button"
+          value="agree"
+          isChecked={this.state.isAgree}
+          onChange={this.handleAgree}
+        >
+          同意
+        </Checkbox>
       </div>
     )
   }
@@ -30,6 +40,12 @@ export default class CheckboxButtonExample extends PureComponent {
   handleSportsChange = values => {
     this.setState({
       sports: values
+    })
+  }
+
+  handleAgree = () => {
+    this.setState({
+      isAgree: !this.state.isAgree
     })
   }
 

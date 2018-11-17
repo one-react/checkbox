@@ -13,6 +13,7 @@ export default class CheckboxExample extends PureComponent {
     return (
       <div className="checkbox-example">
         <Checkbox
+          className="hello"
           value="agree"
           isChecked={this.state.isChecked}
           onChange={this.handleOnChange}

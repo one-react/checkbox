@@ -57,7 +57,7 @@ describe('test for Checkbox', () => {
 })
 
 describe('no default checked value', () => {
-  const wrapper = mount(renderCheckboxGroup({}))
+  const wrapper = mount(renderCheckboxGroup({ className: 'hello' }))
   it('should render properly', () => {
     expect(
       wrapper
@@ -72,11 +72,15 @@ describe('no default checked value', () => {
         .hasClass('or-checkbox-checked')
     ).toBe(false)
   })
+
+  it('should render properly #className', () => {
+    expect(wrapper.find('.or-checkbox-group').hasClass('hello')).toBe(true)
+  })
 })
 
 function renderCheckboxGroup(props) {
   return (
-    <CheckboxGroup values={props.fruits}>
+    <CheckboxGroup values={props.fruits} {...props}>
       <Checkbox value="apple">Apple</Checkbox>
       <Checkbox value="banana">Banana</Checkbox>
     </CheckboxGroup>
