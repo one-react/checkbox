@@ -3,9 +3,9 @@ import React, { PureComponent } from 'react'
 
 interface Props {
   /**
-   * custom classname
+   * custom className
    **/
-  classname?: string
+  className?: string
 
   /**
    * checkbox type
@@ -37,14 +37,14 @@ export class CheckboxGroup extends PureComponent<Props, {}> {
 
   render() {
     const { values } = this.state
-    const { classname, children, horizontal, type } = this.props
+    const { className, children, horizontal, type } = this.props
     const checkboxGroupClass = clx(
       {
         'or-checkbox-group-horizontal': horizontal,
         'or-checkbox-group-vertical': !horizontal
       },
       'or-checkbox-group',
-      classname
+      className
     )
     return (
       <div className={checkboxGroupClass}>
