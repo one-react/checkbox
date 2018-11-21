@@ -30,6 +30,16 @@ describe('test for Checkbox', () => {
       expect(wrapper.find('.or-checkbox').length).toBe(1)
       expect(wrapper.find('.or-checkbox-button').length).toBe(1)
     })
+
+    it('should render properly: className', () => {
+      const wrapper = mount(
+        renderCheckbox({
+          className: 'hello'
+        })
+      )
+      expect(wrapper.find('.or-checkbox').length).toBe(1)
+      expect(wrapper.find('.or-checkbox').hasClass('hello')).toBe(true)
+    })
   })
 
   describe('simulates click events', () => {

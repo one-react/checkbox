@@ -4,9 +4,9 @@ import React, { PureComponent } from 'react'
 
 interface Props {
   /**
-   * custom classname
+   * custom className
    **/
-  classname?: string
+  className?: string
 
   /**
    * checkbox type
@@ -36,14 +36,14 @@ interface Props {
 }
 export class Checkbox extends PureComponent<Props, {}> {
   render() {
-    const { children, isChecked, type = 'normal', classname } = this.props
+    const { children, isChecked, type = 'normal', className } = this.props
     const checkboxClass = clx(
       {
         'or-checkbox-checked': isChecked,
         [`or-checkbox-${type}`]: type
       },
       'or-checkbox',
-      classname
+      className
     )
     return (
       <div className={checkboxClass} onClick={this.handleClick}>
